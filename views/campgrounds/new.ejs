@@ -1,0 +1,49 @@
+<%- layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-6 offset-3">
+        <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" name="campground[title]" id="title" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" name="campground[location]" id="location" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>       
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Campground Price</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" id="price" name="campground[price]" placeholder="0.00" aria-label="Amount (to the nearest dollar)" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" name="campground[description]" id="location" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Image(s)</label>
+                    <input class="form-control" type="file" id="image" name="image" multiple>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Campground</button>
+                <a href="/campgrounds" class="btn btn-secondary float-end">Back to Campgrounds</a>
+            </div>
+        </form>
+    </div>
+</div>
